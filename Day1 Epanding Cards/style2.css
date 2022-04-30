@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container .panel{
+    flex: 0.5;
+    margin: 10px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow:1px 1px 2px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+    padding: 30px;
+    transition: flex 0.5s ease;
+}
+.container h3{
+    color: #fff;
+    font-size: 12px;
+}
+.panel.active{
+    flex: 5;
+}
