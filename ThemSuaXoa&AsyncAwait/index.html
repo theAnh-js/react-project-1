@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemSuaXoa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label for="">ID</label>
+    <input id="id" type="number">
+
+    <label for="">Name</label>
+    <input id="name" type="text">
+
+
+    <label for="">Age</label>
+    <input id="age" type="number">
+
+   <button onclick="addUser()" >Submit</button>
+    
+    <table id="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+</body>
+
+<script>
+
+let userList = []
+
+const getID = document.getElementById("id")
+const getName = document.getElementById("name")
+const getAge = document.getElementById("age")
+
+function addUser() {
+
+    user = {
+        id: getID.value,
+        name: getName.value,
+        age: getAge.value
+    }
+    
+    let checkId = userList.findIndex(function(user) {
+        return user.id === getID.value
+    })
+    console.log(checkId)
+    if(checkId !== -1){
+        userList.splice(checkId, 1, user)
+    }else{
+        userList.push(user)
+    }
+
+    render()
+    clearInput()
+}
+
+function render(){
+    let table = `
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    `
+    for(var i = 0; i < userList.length; i++){
+        table += `
+        <tr>
+            <td>${userList[i].id}</td>
+            <td>${userList[i].name}</td>
+            <td>${userList[i].age}</td>
+            <td>
+                <button onclick = 'handleDelete(${userList[i].id})'>Delete</button>
+                <button onclick = 'handleEdit(${userList[i].id})'>Edit</button>
+            </td>
+        </tr>
+        `
+    }
+
+    let getTable = document.getElementById('table')
+    getTable.innerHTML = table
+
+}
+
+function clearInput() {
+    getID.value = ''
+    getName.value = ''
+    getAge.value = ''
+}
+
+function handleDelete(id){
+    var confirmation = confirm('Are you sure you want to delete this')
+    if(confirmation){
+        for(var i = 0; i < userList.length; i++){
+            if(userList[i].id = id){
+                userList.splice(i, 1)
+                render()
+            }
+        }
+    }
+}
+
+function handleEdit(id){
+    for(var i = 0; i < userList.length; i++){
+        if(userList[i].id == id){
+            getID.value = userList[i].id
+            getName.value = userList[i].name
+            getAge.value = userList[i].age
+        }
+    }
+}
+
+</script>
+<script src="asyncAwaitPromise.js"></script>
+</html>

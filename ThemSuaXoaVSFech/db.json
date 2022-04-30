@@ -1,0 +1,24 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "name": "Javascritp",
+      "description": "Learn Programming with us"
+    },
+    {
+      "name": " Libraries and Frameworks",
+      "description": "Một websites hay ứng dụng hiện đại rất phức tạp, chỉ sử dụng HTML, CSS, Javascript theo cách code thuần (tự code từ đầu tới cuối) sẽ rất khó khăn. Vì vậy các Libraries, Frameworks ra đời nhằm đơn giản hóa, tiết kiệm chi phí và thời gian để hoàn thành một sản phẩm website hoặc ứng dụng mobile.",
+      "id": 3
+    },
+    {
+      "name": " Libraries & Frameworks",
+      "description": "Một websites hay ứng dụng hiện đại rất phức tạp, chỉ sử dụng HTML, CSS, Javascript theo cách code thuần (tự code từ đầu tới cuối) sẽ rất khó khăn. Vì vậy các Libraries, Frameworks ra đời nhằm đơn giản hóa, tiết kiệm chi phí và thời gian để hoàn thành một sản phẩm website hoặc ứng dụng mobile.",
+      "id": 4
+    },
+    {
+      "name": "JavaScript Nâng Cao WITH ME",
+      "description": "Hiểu sâu hơn về cách Javascript hoạt động, tìm hiểu về IIFE, closure, reference types, this keyword, bind, call, apply, prototype, ...",
+      "id": 5
+    }
+  ]
+}
